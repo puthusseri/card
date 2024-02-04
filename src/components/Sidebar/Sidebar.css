@@ -1,0 +1,35 @@
+/* Sidebar.css */
+
+.SidebarWrapper {
+  width: 200px; /* Adjust width as needed */
+  margin-top: 45px;
+  background-color: #dcdfe1; /* Dark shade for contrast */
+  color: #060707; /* Light text for readability */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.sidebar-item-text .visible{
+  visibility: visible;;
+}
+
+.sidebar-item-text .hidden{
+  visibility: hidden;
+}
+.sidebar-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #34495e; /* Slight separation between items */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sidebar-item:hover {
+  background-color: #131313; /* Highlight item on hover */
+  color: white;
+}
+
+
+
