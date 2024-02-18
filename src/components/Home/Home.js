@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Home.css';
 
 function Home() {
-  const [activeComponent, setActiveComponent] = useState('Contact');
+  const [activeComponent, setActiveComponent] = useState('Profile');
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
   const handleClick = (itemName) => {
@@ -19,18 +19,24 @@ function Home() {
   };
 
   const items = [
-    { name: 'Contact', icon: faHome, component: <Contact /> },
     { name: 'Profile', icon: faUser, component: <Profile /> },
+    { name: 'Contact', icon: faHome, component: <Contact /> },
+    { name: 'Dummy Profile', icon: faHome, component: <Profile /> },
   ];
 
   return (
     <div className='home'>
+      {/* Toggle Button - Always Visible */}
+      <div className="toggle-button-container" onClick={toggleSidebar}>
+        <FontAwesomeIcon icon={faBars} className="hamburger-icon" />
+      </div>
+      
+      {/* Sidebar */}
       <div className={`sidebar ${sidebarVisible ? 'visible' : 'hidden'}`}>
-        <div className={`toggle-button-container ${sidebarVisible ? 'visible' : 'hidden'}`} onClick={toggleSidebar}>
-          <FontAwesomeIcon icon={faBars} className="hamburger-icon" />
-        </div>
         <Sidebar items={items} handleClick={handleClick} sidebarVisible={sidebarVisible} />
       </div>
+      
+      {/* Main Content */}
       <div className='mainPage'>
         {items.find((item) => item.name === activeComponent)?.component}
       </div>

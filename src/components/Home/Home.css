@@ -1,43 +1,53 @@
-/* Home.css */
 .home {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .sidebar {
-    width: 200px; /* Width of the visible sidebar */
-    transition: width 0.3s; /* Apply transition effect when sidebar visibility changes */
-    background-color: #dcdfe1; /* Dark shade for contrast */
-  }
-  
-  .visible {
-    visibility: visible;
-  }
-  
-  .hidden {
-    width: 0;
-    /* visibility: hidden; */
-  }
-  
-  .toggle-button-container {
-    
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1; /* Ensure the button appears above the sidebar */
-    cursor: pointer;
-  }
-  
-  .hamburger-icon {
-    font-size: 24px;
-    color: rgb(201, 52, 52);
-  }
-  
-  .mainPage {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    transition: margin-left 0.3s; /* Apply transition effect when sidebar visibility changes */
-    margin-left: 3em; 
-  }
-  
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px; /* Width of the visible sidebar */
+  transition: width 0.3s, opacity 0.3s; /* Apply transition effect for width and opacity */
+  background-color: #dcdfe1; /* Dark shade for contrast */
+  overflow: hidden; /* Prevents contents from overflowing */
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  width: 0;
+  opacity: 0; /* Fade out the sidebar content */
+  visibility: hidden; /* Ensures content is not interactable */
+}
+
+.toggle-button-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2; /* Ensure it's above all other content */
+  cursor: pointer;
+}
+
+.hamburger-icon {
+  font-size: 24px;
+  color: rgb(201, 52, 52);
+}
+
+/* Ensure the rest of your CSS supports the sidebar showing/hiding properly */
+
+/* Rest of your CSS remains unchanged */
+
+
+.hamburger-icon {
+  font-size: 24px;
+  color: rgb(201, 52, 52);
+}
+
+.mainPage {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  transition: margin-left 0.3s; /* Apply transition effect when sidebar visibility changes */
+  margin-left: 50px; /* Adjusted to match the sidebar width or use calc() if dynamic */
+}
