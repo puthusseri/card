@@ -1,0 +1,22 @@
+
+:root {
+    --background-color: #fff; /* Default to light theme */
+    --text-color: #000;
+    --sidebar-background-color: #fff;
+    --icon-color: #000;
+  }
+  
+  .light {
+    --background-color: #fff;
+    --text-color: #000;
+    --sidebar-background-color: #fff;
+    --icon-color: #000;
+  }
+  
+  .dark {
+    --background-color: #121212;
+    --text-color: #fff;
+    --sidebar-background-color: #121212;
+    --icon-color: #fff;
+  }
+  

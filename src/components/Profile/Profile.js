@@ -1,6 +1,6 @@
 import React from 'react';
 import './Profile.css';
-
+import { useTheme } from '../../ThemeContext';
 function Profile() {
   const userProfile = {
     name: "Vyshak Puthusseri",
@@ -10,13 +10,14 @@ function Profile() {
     imageUrl: "https://avatars.githubusercontent.com/u/33171828?s=400&u=d952d6a538625f4292e6cc60e6958f2cd4999f0f&v=4",
     aboutMe : "I'm Vyshak, a developer from Kerala, India.",
   };
+  const { theme } = useTheme();
 
   return (
     <div className="profile-container">
       <div className="profile-card">
       <div className="profile-image-container">
           <img src={userProfile.imageUrl} alt="Profile" />
-          <div className="circular-overlay"></div>
+          <div className={`circular-overlay ${theme === 'light' ? 'visible' : 'hidden'}`}></div>
         </div>
         <div className="profile-details">
           <div className="profile-info">

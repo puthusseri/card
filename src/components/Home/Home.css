@@ -1,14 +1,31 @@
+
 .home {
   display: flex;
-  height: 100vh;
+  height: 100vh; 
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .sidebar {
-  width: 200px; /* Width of the visible sidebar */
-  transition: width 0.3s, opacity 0.3s; /* Apply transition effect for width and opacity */
-  background-color: #dcdfe1; /* Dark shade for contrast */
-  overflow: hidden; /* Prevents contents from overflowing */
+  background-color: var(--sidebar-background-color);
+  width: 200px;
+  margin-top: 2%;
+  transition: width 0.3s, opacity 0.3s;
+  overflow-y: auto; 
+  max-height: calc(100vh - 20px);
 }
+
+.hamburger-icon, .theme-icon {
+  color: var(--icon-color);
+}
+
+.theme-toggle-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
 
 .visible {
   visibility: visible;
@@ -17,31 +34,36 @@
 
 .hidden {
   width: 0;
-  opacity: 0; /* Fade out the sidebar content */
-  visibility: hidden; /* Ensures content is not interactable */
+  opacity: 0;
+  visibility: hidden; 
 }
 
 .toggle-button-container {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 2; /* Ensure it's above all other content */
+  top: 20px;
+  left: 20px;
+  z-index: 2; 
   cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:var(--background-color);
+  box-shadow: 0 0 2px var(--icon-color); 
+  transition: box-shadow 0.3s ease; 
 }
+
+.toggle-button-container:hover {
+  box-shadow: 0 0 8px 2px #00ff00; 
+}
+
+
 
 .hamburger-icon {
   font-size: 24px;
-  color: rgb(201, 52, 52);
-}
-
-/* Ensure the rest of your CSS supports the sidebar showing/hiding properly */
-
-/* Rest of your CSS remains unchanged */
-
-
-.hamburger-icon {
-  font-size: 24px;
-  color: rgb(201, 52, 52);
+  color: var(--icon-color);
 }
 
 .mainPage {
@@ -49,5 +71,5 @@
   padding: 20px;
   overflow-y: auto;
   transition: margin-left 0.3s; /* Apply transition effect when sidebar visibility changes */
-  margin-left: 50px; /* Adjusted to match the sidebar width or use calc() if dynamic */
+  margin : 3%;
 }

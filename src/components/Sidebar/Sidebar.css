@@ -1,13 +1,12 @@
 /* Sidebar.css */
 
 .SidebarWrapper {
-  width: 200px; /* Adjust width as needed */
+  width: 200px; 
   margin-top: 45px;
-  background-color: #dcdfe1; /* Dark shade for contrast */
-  color: #060707; /* Light text for readability */
-  height: 100vh; /* Full height of the viewport */
+  
+  height: 100vh;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column; 
 }
 
 .sidebar-item-text .visible{
@@ -20,14 +19,14 @@
 .sidebar-item {
   padding: 10px 20px;
   cursor: pointer;
-  border-bottom: 1px solid #34495e; /* Slight separation between items */
+  border-bottom: 1px solid #34495e; 
   display: flex;
-  align-items: center; /* Center items vertically */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  align-items: center; 
+  transition: background-color 0.3s ease;
 }
 
 .sidebar-item:hover {
-  background-color: #131313; /* Highlight item on hover */
+  background-color: #131313;
   color: white;
 }
 
